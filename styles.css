@@ -1,0 +1,848 @@
+/* Reset e configurações base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0066cc;
+    --primary-dark: #004c99;
+    --primary-light: #3385d6;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --yellow-saep: #FFD700;
+    --yellow-light: #FFEB3B;
+    --yellow-dark: #FFA000;
+    --light-gray: #f8f9fa;
+    --medium-gray: #e9ecef;
+    --dark-gray: #343a40;
+    --border-color: #dee2e6;
+    --text-color: #212529;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-gray);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* ========================================
+   TELA DE LOGIN
+======================================== */
+.login-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0066cc 0%, #FFD700 100%);
+    padding: 2rem;
+}
+
+.login-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+    overflow: hidden;
+    animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+.login-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--yellow-saep));
+    color: white;
+    padding: 2.5rem 2rem;
+    text-align: center;
+}
+
+.login-logo h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.login-logo p {
+    font-size: 1rem;
+    opacity: 0.95;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.login-content {
+    padding: 2.5rem 2rem;
+}
+
+.login-content h2 {
+    font-size: 1.8rem;
+    color: var(--dark-gray);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.login-subtitle {
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--dark-gray);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.label-icon {
+    font-size: 1.2rem;
+}
+
+.form-group input {
+    padding: 1rem 1.2rem;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--yellow-saep);
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+}
+
+.form-group input::placeholder {
+    color: #adb5bd;
+}
+
+.input-hint {
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+    margin-top: -0.3rem;
+}
+
+.btn-start {
+    margin-top: 1rem;
+    padding: 1.2rem 2rem;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--yellow-saep));
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.btn-start:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
+}
+
+.btn-start:active {
+    transform: translateY(0);
+}
+
+.btn-start span {
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-start:hover span {
+    transform: translateX(5px);
+}
+
+.login-footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.info-text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.info-icon {
+    font-size: 1.1rem;
+}
+
+/* ========================================
+   TELA DA PROVA
+======================================== */
+.exam-screen {
+    display: block;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, var(--primary-color), var(--yellow-saep));
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 0.2rem;
+}
+
+.logo-subtitle {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.3rem;
+}
+
+.user-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.timer {
+    font-size: 1.1rem;
+    font-weight: 700;
+    background: rgba(255, 215, 0, 0.3);
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 215, 0, 0.5);
+}
+
+/* Container Principal */
+.container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+/* Sidebar */
+.sidebar {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.exam-info {
+    border-bottom: 2px solid var(--medium-gray);
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.exam-info h2 {
+    font-size: 1.3rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--yellow-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+}
+
+.exam-subtitle {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.progress-count {
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), var(--yellow-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--medium-gray);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--yellow-saep));
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Navegação de questões */
+.questions-nav h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--dark-gray);
+}
+
+.questions-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.question-nav-btn {
+    aspect-ratio: 1;
+    border: 2px solid var(--border-color);
+    background: white;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.question-nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.question-nav-btn.current {
+    background: linear-gradient(135deg, var(--primary-color), var(--yellow-saep));
+    color: white;
+    border-color: var(--yellow-saep);
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+}
+
+.question-nav-btn.answered {
+    background: var(--success-color);
+    color: white;
+    border-color: var(--success-color);
+}
+
+.question-nav-btn.unanswered {
+    background: white;
+    color: var(--text-color);
+}
+
+/* Legenda */
+.legend {
+    border-top: 2px solid var(--medium-gray);
+    padding-top: 1rem;
+}
+
+.legend h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    color: var(--dark-gray);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.85rem;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid var(--border-color);
+}
+
+.legend-color.answered {
+    background: var(--success-color);
+    border-color: var(--success-color);
+}
+
+.legend-color.current {
+    background: linear-gradient(135deg, var(--primary-color), var(--yellow-saep));
+    border-color: var(--yellow-saep);
+}
+
+.legend-color.unanswered {
+    background: white;
+}
+
+/* Área da Questão */
+.question-area {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid var(--primary-color);
+    background: linear-gradient(to right, rgba(0, 102, 204, 0.05), rgba(255, 215, 0, 0.05));
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.question-title {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.question-points {
+    background: linear-gradient(135deg, var(--yellow-saep), var(--yellow-dark));
+    color: var(--dark-gray);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+}
+
+.question-content {
+    margin-bottom: 2rem;
+}
+
+.question-text {
+    margin-bottom: 2rem;
+}
+
+.question-text p {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.equation {
+    background: linear-gradient(135deg, rgba(0, 102, 204, 0.08), rgba(255, 215, 0, 0.08));
+    padding: 1.5rem;
+    border-left: 4px solid var(--yellow-saep);
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    font-family: 'Courier New', monospace;
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.1);
+}
+
+.question-image {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.question-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+/* Formulário de respostas */
+.answers-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.answer-option {
+    position: relative;
+}
+
+.answer-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.answer-option label {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.2rem 1.5rem;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.answer-option label:hover {
+    border-color: var(--yellow-saep);
+    background: linear-gradient(to right, rgba(0, 102, 204, 0.05), rgba(255, 215, 0, 0.1));
+    transform: translateX(5px);
+}
+
+.answer-option input[type="radio"]:checked + label {
+    border-color: var(--primary-color);
+    background: linear-gradient(to right, rgba(0, 102, 204, 0.1), rgba(255, 215, 0, 0.15));
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+}
+
+.option-letter {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    min-width: 30px;
+}
+
+.answer-option input[type="radio"]:checked + label .option-letter {
+    color: var(--yellow-dark);
+}
+
+.option-text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    flex: 1;
+}
+
+/* Footer da questão */
+.question-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 2px solid var(--medium-gray);
+    gap: 1rem;
+}
+
+/* Botões */
+.btn {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-secondary {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+}
+
+.btn-danger {
+    background: var(--danger-color);
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+}
+
+/* Botão fixo de finalizar */
+.btn-finish-exam {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--danger-color);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
+    z-index: 99;
+}
+
+.btn-finish-exam:hover {
+    background: #c82333;
+    transform: scale(1.05);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: var(--shadow-lg);
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-content h2 {
+    margin-bottom: 1rem;
+    color: var(--danger-color);
+    font-size: 1.8rem;
+}
+
+.modal-content p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.modal-content .warning {
+    font-weight: 600;
+    color: var(--danger-color);
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.modal-buttons .btn {
+    flex: 1;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: static;
+    }
+
+    .questions-grid {
+        grid-template-columns: repeat(10, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .login-screen {
+        padding: 1rem;
+    }
+
+    .login-container {
+        border-radius: 15px;
+    }
+
+    .login-header {
+        padding: 2rem 1.5rem;
+    }
+
+    .login-logo h1 {
+        font-size: 2.5rem;
+    }
+
+    .login-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .user-info {
+        align-items: center;
+    }
+
+    .container {
+        padding: 0 1rem;
+        gap: 1rem;
+    }
+
+    .question-area {
+        padding: 1.5rem;
+    }
+
+    .question-title {
+        font-size: 1.4rem;
+    }
+
+    .question-footer {
+        flex-direction: column;
+    }
+
+    .question-footer .btn {
+        width: 100%;
+    }
+
+    .questions-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .btn-finish-exam {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-logo h1 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+
+    .login-logo p {
+        font-size: 0.9rem;
+    }
+
+    .login-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-group input {
+        padding: 0.9rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    .btn-start {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .question-points {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .option-text {
+        font-size: 0.95rem;
+    }
+}

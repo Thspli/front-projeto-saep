@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Avaliação - SAEP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Tela de Login/Início -->
+    <div class="login-screen" id="loginScreen">
+        <div class="login-container">
+            <div class="login-header">
+                <div class="login-logo">
+                    <h1>SAEP</h1>
+                    <p>Sistema de Avaliação de Provas</p>
+                </div>
+            </div>
+
+            <div class="login-content">
+                <h2>Bem-vindo(a)!</h2>
+                <p class="login-subtitle">Preencha os dados abaixo para iniciar sua prova</p>
+
+                <form class="login-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="studentName">
+                            <span class="label-icon">👤</span>
+                            Nome Completo
+                        </label>
+                        <input 
+                            type="text" 
+                            id="studentName" 
+                            name="studentName" 
+                            placeholder="Digite seu nome completo"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="examLink">
+                            <span class="label-icon">🔗</span>
+                            Link da Prova
+                        </label>
+                        <input 
+                            type="text" 
+                            id="examLink" 
+                            name="examLink" 
+                            placeholder="Cole o link da prova aqui"
+                            required
+                        >
+                        <small class="input-hint">Cole o link fornecido pelo professor</small>
+                    </div>
+
+                    <button type="submit" class="btn btn-start">
+                        Iniciar Prova
+                        <span>→</span>
+                    </button>
+                </form>
+
+                <div class="login-footer">
+                    <p class="info-text">
+                        <span class="info-icon">ℹ️</span>
+                        Certifique-se de que possui uma conexão estável com a internet
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sistema de Prova (inicialmente oculto) -->
+    <div class="exam-screen" id="examScreen" style="display: none;">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <h1>SAEP</h1>
+                <span class="logo-subtitle">Sistema de Avaliação</span>
+            </div>
+            <div class="user-info">
+                <span class="user-name">Aluno: João Silva</span>
+                <span class="timer" id="timer">Tempo: 01:30:00</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+        <!-- Sidebar com navegação de questões -->
+        <aside class="sidebar">
+            <div class="exam-info">
+                <h2>Prova de Matemática</h2>
+                <p class="exam-subtitle">1º Bimestre - 2024</p>
+                <div class="progress-info">
+                    <span class="progress-text">Progresso</span>
+                    <span class="progress-count" id="progressCount">0/20</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <div class="questions-nav">
+                <h3>Questões</h3>
+                <div class="questions-grid" id="questionsGrid">
+                    <!-- Questões serão inseridas via JavaScript -->
+                </div>
+            </div>
+
+            <div class="legend">
+                <h4>Legenda:</h4>
+                <div class="legend-item">
+                    <span class="legend-color answered"></span>
+                    <span>Respondida</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color current"></span>
+                    <span>Atual</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color unanswered"></span>
+                    <span>Não respondida</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Área principal da questão -->
+        <section class="question-area">
+            <div class="question-header">
+                <h2 class="question-title" id="questionTitle">Questão 1</h2>
+                <span class="question-points" id="questionPoints">Valor: 2,0 pontos</span>
+            </div>
+
+            <div class="question-content" id="questionContent">
+                <div class="question-text">
+                    <p>Resolva a seguinte equação do segundo grau:</p>
+                    <p class="equation">x² - 5x + 6 = 0</p>
+                    <p>Encontre as raízes da equação e indique qual das alternativas abaixo apresenta o conjunto solução correto.</p>
+                </div>
+
+                <div class="question-image" id="questionImage" style="display: none;">
+                    <!-- Imagem da questão, se houver -->
+                </div>
+
+                <form class="answers-form" id="answersForm">
+                    <div class="answer-option">
+                        <input type="radio" id="option-a" name="answer" value="a">
+                        <label for="option-a">
+                            <span class="option-letter">A)</span>
+                            <span class="option-text">S = {1, 6}</span>
+                        </label>
+                    </div>
+
+                    <div class="answer-option">
+                        <input type="radio" id="option-b" name="answer" value="b">
+                        <label for="option-b">
+                            <span class="option-letter">B)</span>
+                            <span class="option-text">S = {2, 3}</span>
+                        </label>
+                    </div>
+
+                    <div class="answer-option">
+                        <input type="radio" id="option-c" name="answer" value="c">
+                        <label for="option-c">
+                            <span class="option-letter">C)</span>
+                            <span class="option-text">S = {-2, -3}</span>
+                        </label>
+                    </div>
+
+                    <div class="answer-option">
+                        <input type="radio" id="option-d" name="answer" value="d">
+                        <label for="option-d">
+                            <span class="option-letter">D)</span>
+                            <span class="option-text">S = {0, 5}</span>
+                        </label>
+                    </div>
+
+                    <div class="answer-option">
+                        <input type="radio" id="option-e" name="answer" value="e">
+                        <label for="option-e">
+                            <span class="option-letter">E)</span>
+                            <span class="option-text">Não possui solução real</span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <div class="question-footer">
+                <button class="btn btn-secondary" id="btnPrevious">
+                    <span>←</span> Anterior
+                </button>
+                
+                <button class="btn btn-primary" id="btnSave">
+                    Salvar Resposta
+                </button>
+
+                <button class="btn btn-secondary" id="btnNext">
+                    Próxima <span>→</span>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de confirmação de finalização -->
+    <div class="modal" id="finishModal">
+        <div class="modal-content">
+            <h2>Finalizar Prova?</h2>
+            <p>Você respondeu <span id="answeredCount">0</span> de <span id="totalCount">20</span> questões.</p>
+            <p class="warning">Tem certeza que deseja finalizar a prova?</p>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" id="btnCancelFinish">Cancelar</button>
+                <button class="btn btn-danger" id="btnConfirmFinish">Finalizar Prova</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão de finalizar prova (fixo no canto) -->
+    <button class="btn-finish-exam" id="btnFinishExam">
+        Finalizar Prova
+    </button>
+    </div> <!-- Fim do exam-screen -->
+
+    <script src="script.js"></script>
+</body>
+</html>
